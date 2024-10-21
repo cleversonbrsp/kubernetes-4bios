@@ -129,7 +129,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 80
       nodePort: 30080
 ```
 
@@ -191,7 +191,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 80
 ```
 
 **O que observar:**
