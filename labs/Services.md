@@ -87,7 +87,7 @@ spec:
 
    ```bash
    kubectl get services
-   kubectl get pods -l app=my-app
+   kubectl get pods -l app=my-app --show-labels
    ```
 
 4. **Testar a comunicação interna:**
@@ -260,15 +260,18 @@ spec:
 2. **Testar a resolução de nome dentro do cluster:**
 
    ```bash
-   kubectl run -it --rm test-pod --image=busybox -- nslookup my-external-service
+   kubectl run -it --rm test-pod --image=busybox -- /bin/sh
    ```
 
+   ```bash
+   nslookup my-external-service
+   ```
    - Deve resolver para `www.google.com`.
 
 3. **Testar o acesso via Service:**
 
    ```bash
-   kubectl run -it --rm test-pod --image=busybox -- wget -qO- http://my-external-service
+   wget -qO- http://my-external-service
    ```
 
 ---
@@ -295,7 +298,7 @@ spec:
     app: my-app
   ports:
     - port: 80
-      targetPort: 8080
+      targetPort: 80
 ```
 
 **O que observar:**
@@ -320,7 +323,11 @@ spec:
 3. **Testar a resolução de nomes dos Pods:**
 
    ```bash
-   kubectl run -it --rm test-pod --image=busybox -- nslookup my-headless-service
+   kubectl run -it --rm test-pod --image=busybox -- /bin/sh
+   ```
+
+   ```bash
+   nslookup my-headless-service
    ```
 
    - Deve listar os IPs dos Pods individuais.
