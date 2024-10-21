@@ -261,11 +261,10 @@ spec:
 
    ```bash
    kubectl run -it --rm test-pod --image=busybox -- /bin/sh
-   ```
-
-   ```bash
+   # Dentro do Pod:
    nslookup my-external-service
    ```
+   
    - Deve resolver para `www.google.com`.
 
 3. **Testar o acesso via Service:**
@@ -324,9 +323,7 @@ spec:
 
    ```bash
    kubectl run -it --rm test-pod --image=busybox -- /bin/sh
-   ```
-
-   ```bash
+   # Dentro do Pod:
    nslookup my-headless-service
    ```
 
