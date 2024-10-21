@@ -34,7 +34,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 80
 ```
 
 **O que observar:**
@@ -66,7 +66,7 @@ spec:
            - name: my-app
              image: nginx
              ports:
-               - containerPort: 8080
+               - containerPort: 80
    ```
 
    Salve como `deployment.yaml` e aplique:
