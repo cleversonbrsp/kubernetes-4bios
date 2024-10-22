@@ -12,6 +12,15 @@ O Horizontal Pod Autoscaler (HPA) é um recurso do Kubernetes que permite o dime
 
 **Objetivo:** Preparar um Deployment básico que será utilizado nos laboratórios subsequentes para aplicar o HPA.
 
+**Pre-requisito: Instalar Metric Server**
+
+- Instalar Metric Server
+   ```bash
+   kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+   ```
+
+- 
+
 **Descrição do `spec` do Deployment:**
 
 - **`replicas`:** Número inicial de réplicas do Deployment.
